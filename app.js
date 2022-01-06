@@ -4,13 +4,16 @@ const fs = require("fs");
 const FormData = require("form-data");
 const app = express();
 const Hash = require("ipfs-only-hash");
-
-require("dotenv").config();
+const {
+  PINATA_API_KEY,
+  PINATA_SECRET_API_KEY
+} = require('./config.js')
+const { mint } = require('./wallet.js')
 
 const port = 3000;
 const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;
-const pinataApiKey = process.env.PINATA_API_KEY;
-const pinataSecretApiKey = process.env.PINATA_SECRET_API_KEY;
+const pinataApiKey = PINATA_API_KEY 
+const pinataSecretApiKey = PINATA_SECRET_API_KEY 
 
 app.get("/", (req, res) => {
   res.send("ipfs uploader");
