@@ -1,4 +1,5 @@
 # ipfs-uploader
+Was created to support live-minting for Tezos NFT exhibition at SEA FOCUS (Singapore Art Week).
 
 1. Create a .env file with pinata api key and pinata secret api key (do not share)
 
